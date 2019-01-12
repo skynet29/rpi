@@ -1,0 +1,15 @@
+[
+	{
+	"name": "sensor1",
+	"device": "ADS1015",
+	"i2cAddr": 72,
+	"mux": 5
+	},
+
+	{
+	"name": "sensor2",
+	"device": "TOTO",
+	"i2cAddr": 73,
+	"k": 0.0625
+	}
+]	

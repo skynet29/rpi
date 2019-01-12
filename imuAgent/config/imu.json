@@ -1,0 +1,14 @@
+{
+"logger": {
+		"default": "ERROR",
+		"IMUAgent": "INFO"
+	},
+	
+"server":{
+		"port": 14547,
+		"timeout": 10
+	},
+	
+	
+"monitorPeriod":100
+}

@@ -1,0 +1,96 @@
+{
+"logger": {
+		"default": "ERROR",
+		"RearAgent": "INFO",
+		"NovaMotor": "WARNING"
+	},
+	
+"server":{
+		"port": 14545
+	},
+	
+"frontAgent":{
+		"port": 14546,
+		"host": "pi-frontbal"
+	},
+	
+"navAgent":{
+		"port": 14546,
+		"host": "pi-mem"
+	},
+	
+"bite":{
+		"port": 5984,
+		"host": "auv2",
+		"period": 30000
+	},
+	
+"sensors": [
+        {
+			"name": "pumpTemp",
+			"type": "temperature",
+			"node": "pump",
+			"device": "TMP102",
+			"i2cAddr": 74,
+			"maxValue": 50.0
+        },
+
+        {
+			"name": "pumpPressure",
+			"type": "pressure",
+			"node": "pump",
+			"device": "ADS1015",
+			"i2cAddr": 75,
+			"mux": 7,
+			"gain": 1,
+			"a": 30.3,
+			"b": -25.545
+        },
+        
+        {
+			"name": "temperature",
+			"type": "temperature",
+			"node": "sensors",
+			"device": "TMP102",
+			"i2cAddr": 73
+        },
+        
+		{
+			"name": "waterleakage",
+			"type": "waterleakage",
+			"node": "sensors",
+			"device": "ADS1015",		
+			"i2cAddr": 72,
+			"mux": 4,
+			"minValue": 0.7
+		},        
+
+        {
+			"name": "tankPressure",
+			"type": "pressure",
+			"node": "sensors",
+			"device": "ADS1015",
+			"i2cAddr": 75,
+			"mux": 6,
+			"gain": 1,
+			"a": 3.246,
+			"b": -3.70
+        }
+],
+	
+"nova":{
+		"maxPower": 10,
+		"timeoutEcho": 1000
+	},
+	
+"emergencyStop": {
+		"novaPower": 5,
+		"drainDuration": 180000
+	},
+			
+"monitorPeriod":1000,
+"maxTankPressure": 0.5,
+"minTankPressure": -0.1,
+"maxPumpPressure": 15.0,
+"maxPumpTemp": 50.0
+}

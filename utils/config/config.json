@@ -1,0 +1,6 @@
+{
+"server":{
+		"port": 13000,
+		"maxClient": 2
+	}
+}

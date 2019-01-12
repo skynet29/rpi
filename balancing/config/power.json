@@ -1,0 +1,13 @@
+{
+"logger": {
+		"default": "INFO",
+		"PowerAgent": "INFO"
+	},
+	
+"server":{
+		"port": 14547,
+		"timeout": 10
+	}
+	
+	
+}

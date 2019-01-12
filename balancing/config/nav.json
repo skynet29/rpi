@@ -1,0 +1,62 @@
+{
+"logger": {
+		"default": "ERROR",
+		"FrontAgent": "INFO"
+	},
+	
+"server":{
+		"port": 14546
+	},
+	
+"bite":{
+		"port": 5984,
+		"host": "auv2",
+		"period": 30000
+	},	
+	
+"sensors": [
+	{
+		"name": "WL",
+		"type": "waterleakage",
+		"node": "sensors",
+		"device": "ADS1015",		
+		"i2cAddr": 72,
+		"mux": 4,
+		"minValue": 0.7
+	},
+
+	{
+		"name": "PRESSURE",
+		"type": "pressure",
+		"node": "sensors",
+		"device": "ADS1015",		
+		"i2cAddr": 72,
+		"mux": 5,
+		"a" : 2.915
+	},
+
+	{
+		"name": "CURRENT",
+		"type": "current",
+		"node": "sensors",
+		"device": "ADS1015",		
+		"i2cAddr": 72,
+		"mux": 6,
+		"gain": 1,
+		"a": 20.0,
+		"b": 0.03,
+		"nbDecimal": 3
+	},
+	
+	{
+		"name": "TEMP",
+		"type": "temperature",
+		"node": "sensors",
+		"device": "TMP102",
+		"i2cAddr": 73
+	}
+],
+
+	
+"monitorPeriod":1000
+}

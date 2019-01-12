@@ -1,0 +1,24 @@
+CC=g++
+AR=ar
+
+ARCHIVE_RULE=$(AR) -q $@ $^
+LINK_RULE=$(CC) -o $@ $(LDFLAGS) $^
+DEPEND_RULE =@(echo checking $@:; mkdir -p `dirname $@`; cd `dirname $@`; make `basename $@`)
+
+.SUFFIXES: .cpp
+.cpp.o:
+	@echo $(CC) -c $<  $(CFLAGS) $(INCPATH) 
+	@$(CC) -c $<  $(CFLAGS) $(INCPATH) 
+
+	
+INCLUDE_PATH=../src:../test
+
+VPATH=$(INCLUDE_PATH)
+INCPATH= -I`echo $(INCLUDE_PATH) | sed 's@:@ -I@g'`
+ROOT_DIR=../..
+
+OBJ=$(SRC:.cpp=.o)
+
+
+	
+
